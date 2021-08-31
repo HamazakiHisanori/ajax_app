@@ -8,7 +8,9 @@ class PostsController < ApplicationController
   #end
 
   def create
-    post = Post.create(content: params[:content])
-    render json:{ post: post }
+    #createで定義された内容をa(バリュー:値)
+    a = Post.create(content: params[:content])
+    #Aをjs側にB(キー)として送る
+    render json:{ b: a }
   end
 end
